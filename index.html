@@ -62,6 +62,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-css之定位和浮动" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/21/css之定位和浮动/" class="article-date">
+  <time datetime="2018-09-21T10:39:58.000Z" itemprop="datePublished">2018-09-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/21/css之定位和浮动/">css之定位和浮动</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在学习CSS布局中，一直深受position和float的困惑，在学习<a href="http://zh.learnlayout.com/position.html后略有收获。" target="_blank" rel="noopener">http://zh.learnlayout.com/position.html后略有收获。</a></p>
+<h2 id="position属性"><a href="#position属性" class="headerlink" title="position属性"></a>position属性</h2><h3 id="值static"><a href="#值static" class="headerlink" title="值static"></a>值static</h3><p>static是默认值，一个static元素表示它不会被positioned。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```css</span><br><span class="line">.static&#123;</span><br><span class="line">    position:static;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="值relative"><a href="#值relative" class="headerlink" title="值relative"></a>值relative</h3><p>这个值非常重要，在一个相对定位（position 属性的值为relative）的元素上设置top、right、bottom和left属性，会使这个元素偏离其正常的位置。其他的元素的位置则不会受该元素的影响发生位置改变来弥补它偏离后剩下的空隙。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.relativel</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.relative2</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">    <span class="attribute">top</span>:-<span class="number">20px</span>;<span class="comment">/*相当于坐标一样确定该元素偏离的位置，共有四个方位，top right bottom left*/</span></span><br><span class="line">    <span class="attribute">left</span>:<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">backgroud-color</span>:white;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="值fixed"><a href="#值fixed" class="headerlink" title="值fixed"></a>值fixed</h3><p>这个比较好理解，一个固定定位（position属性的值为fixed)元素会相对于视窗来定位。即便页面滚动，它还是停留在原来的位置。</p>
+<p>这个固定定位元素脱离了文档流，不会保留它原本在页面应有的空隙，就像是图层，固定飘在上面。（但是移动浏览器对fixed的支持很差）。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.fixed</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:fixed;</span><br><span class="line">    <span class="attribute">bottom</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">right</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>:green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="值absolute"><a href="#值absolute" class="headerlink" title="值absolute"></a>值absolute</h3><p>这个值刚开始比较难理解，不过知道<strong>相对论</strong>的就很容易理解了。absolute需要一个背景（也可以理解为画布或图层吧），这个背景就是离他最近的“positioned”祖先元素。absolute是在这个背景上绝对定位，也就是说它是相对于这个背景固定的，当然如果这个背景动，它也会动。你就把它当作背景上固定的一副画。</p>
+<p>如果绝对定位（position属性的值为absolute)的元素没有“positioned”祖先元素，那么它是相对于文档的body元素，并且会随着页面滚动而移动。在这里，一个“positioned”元素是指position值不是static的元素。</p>
+<p>因此我们常见到，想要定位一个元素绝对定位，首先要让他的祖先元素“positioned”，可以让它仅仅“relative”</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.relative</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:relative;<span class="comment">/*这里仅仅把它的定位属性改为相对定位，是为了给后代元素绝对定位做背景*/</span></span><br><span class="line">    <span class="attribute">width</span>:<span class="number">600px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">400px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.absolute</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">120px</span>;</span><br><span class="line">    <span class="attribute">right</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：祖先元素中其他普通元素的margin的使用，可以为绝对定位元素预留一定的空间。</p>
+<h2 id="浮动float"><a href="#浮动float" class="headerlink" title="浮动float"></a>浮动float</h2><p>clear属性被用来控制浮动，在同一个容器中的A和B，当A浮动left时，B会包围A，使用clear可以使B移动到浮动元素A的下面，即设置B{clear:left;}。</p>
+<h4 id="父元素高度塌陷问题"><a href="#父元素高度塌陷问题" class="headerlink" title="父元素高度塌陷问题"></a>父元素高度塌陷问题</h4><p>当设置一个元素浮动时，它脱离了文档流，会使父元素高度为零，并不能包裹住这个浮动元素，此时设置父元素{overflow:auto;}，如果想支持IE，就需要加入如下格式父元素</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">overflow</span>:auto;</span><br><span class="line">    <span class="attribute">zoom</span>:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="分别使用position和float来布局同一页面"><a href="#分别使用position和float来布局同一页面" class="headerlink" title="分别使用position和float来布局同一页面"></a>分别使用position和float来布局同一页面</h4><h5 id="position篇"><a href="#position篇" class="headerlink" title="position篇"></a>position篇</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"clearfix"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span>Menu<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span>Life<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span>Study<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span>Directions<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span>Time<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">            Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span><br><span class="line">            Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, </span><br><span class="line">            vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices </span><br><span class="line">            nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. </span><br><span class="line">            Mauris ante ligula, facilisis sed ornare eu, lobortis in odio.                  </span><br><span class="line">        <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">            谁是我的歌。我是啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦<span class="tag">&lt;<span class="name">br</span> /&gt;</span>我是你的歌</span><br><span class="line">        <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid green;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid red;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">25%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">section</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid gold;</span><br><span class="line">    <span class="attribute">margin-left</span>:<span class="number">25%</span>;</span><br><span class="line">    <span class="attribute">padding-left</span>:<span class="number">2%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="float篇"><a href="#float篇" class="headerlink" title="float篇"></a>float篇</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid green;</span><br><span class="line">    <span class="attribute">overflow</span>:auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">25%</span>;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">section</span>&#123;</span><br><span class="line">    <span class="attribute">margin-left</span>:<span class="number">25%</span>;</span><br><span class="line">    <span class="attribute">padding-left</span>:<span class="number">2%</span>;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid gold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h4><p>响应式设计（responsive design)是一种让网站针对不同浏览器和设备“呈现“不同显示效果的策略，这样可以让网站在任何情况下都显示很棒！</p>
+<p>媒体查询是做此事最强大的工具。</p>
+<p>例如使用百分比宽度来布局，然后在浏览器变窄到无法容纳侧边栏中的菜单时，把布局显示成一列：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid green;</span><br><span class="line">    <span class="attribute">overflow</span>:auto;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> screen and (min-width:<span class="number">600px</span>)&#123;</span><br><span class="line">    <span class="selector-tag">nav</span>&#123;</span><br><span class="line">        <span class="attribute">float</span>:left;</span><br><span class="line">        <span class="attribute">width</span>:<span class="number">25%</span>;</span><br><span class="line">        <span class="attribute">border</span>:<span class="number">1px</span> solid red;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">section</span>&#123;</span><br><span class="line">        <span class="attribute">margin-left</span>:<span class="number">25%</span>;</span><br><span class="line">        <span class="attribute">padding-left</span>:<span class="number">2%</span>;</span><br><span class="line">        <span class="attribute">border</span>:<span class="number">1px</span> solid gold;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> screen and (max-width:<span class="number">599px</span>)&#123;</span><br><span class="line">    <span class="selector-tag">nav</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">        <span class="attribute">display</span>:inline;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/21/css之定位和浮动/" data-id="cjmhjuhdj0008jdr2v16978xh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活篇/">生活篇</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2018-09-12今日所感" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/09/12/2018-09-12今日所感/" class="article-date">
@@ -96,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/12/2018-09-12今日所感/" data-id="cjmh4sjl3000069r21186b4iu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/12/2018-09-12今日所感/" data-id="cjmhjuhdd0004jdr26a361mym" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活篇/">生活篇</a></li></ul>
@@ -150,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/2018-09-04/" data-id="cjmh4sjlb000169r2b9xsqhd1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/04/2018-09-04/" data-id="cjmhjuhcx0000jdr2j15uu5f6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -193,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/学习计划/" data-id="cjmh4sjll000569r22ghs3jmk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/04/学习计划/" data-id="cjmhjuhda0003jdr2cdmwdndw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -390,7 +451,7 @@ span{ color:blue;}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/01/html+css基础课程/" data-id="cjmh4sjlh000369r2ygexovcm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/01/html+css基础课程/" data-id="cjmhjuhd30001jdr2fsnyci64" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -433,7 +494,7 @@ span{ color:blue;}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/01/第一篇博客之旅/" data-id="cjmh4sjlj000469r2hl13eotn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/01/第一篇博客之旅/" data-id="cjmhjuhdf0005jdr2398aeadl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活篇/">生活篇</a></li></ul>
@@ -468,7 +529,7 @@ span{ color:blue;}
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/生活篇/" style="font-size: 10px;">生活篇</a>
+      <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/生活篇/" style="font-size: 10px;">生活篇</a>
     </div>
   </div>
 
@@ -490,6 +551,10 @@ span{ color:blue;}
       <ul>
         
           <li>
+            <a href="/2018/09/21/css之定位和浮动/">css之定位和浮动</a>
+          </li>
+        
+          <li>
             <a href="/2018/09/12/2018-09-12今日所感/">当你打开一扇窗</a>
           </li>
         
@@ -503,10 +568,6 @@ span{ color:blue;}
         
           <li>
             <a href="/2018/09/01/html+css基础课程/">html+css基础课程</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/01/第一篇博客之旅/">论super-Y</a>
           </li>
         
       </ul>
