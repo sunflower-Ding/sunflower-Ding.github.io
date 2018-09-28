@@ -62,6 +62,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-弹性盒子的布局方式简介" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/28/弹性盒子的布局方式简介/" class="article-date">
+  <time datetime="2018-09-28T06:10:52.000Z" itemprop="datePublished">2018-09-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/28/弹性盒子的布局方式简介/">弹性盒子的布局方式简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>弹性盒子flex-box</p>
+<p>简单布局</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">li</span>&gt;</span>happy<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">li</span>&gt;</span>unhappy<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">li</span>&gt;</span>woaini<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">li</span>&gt;</span>woefjw<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"flex-column"</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">section</span>&gt;</span>看看我是谁啊<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">section</span>&gt;</span>weofjwifjweojfiojfowijfiowejfiwejfwfjfifjf</span><br><span class="line">               efoiwfjowejfiwejfowejfoiwejfiwe</span><br><span class="line">               jifjwioejfiwejfowejfoiwejfoiwefjiwef</span><br><span class="line">               jeifjwojfiwejfowejfiewojfweoifjweoifiowejfiowejfiwoefj</span><br><span class="line">               jiewfjwjfiowjfewfoewifjiwefjiwoefjioewjfiowefjowefjoeijffwefjief</span><br><span class="line">           <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:-webkit-flex;<span class="comment">/*首先圈出一个弹性盒子作为容器*/</span></span><br><span class="line">    <span class="attribute">display</span>:flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">nav</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex-column</span>&#123;</span><br><span class="line">    <span class="attribute">-webkit-flex</span>:<span class="number">1</span>;<span class="comment">/*它会占满剩余部分的全部*/</span></span><br><span class="line">    <span class="attribute">flex</span>:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>牛叉布局</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"initial"</span>&gt;</span></span><br><span class="line">           空间足够的时候我是200px，空间不足的时候我会变窄到100px，但不会再低了</span><br><span class="line">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"none"</span>&gt;</span></span><br><span class="line">           无论窗口如何变化，我一直都是200px</span><br><span class="line">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"flex1"</span>&gt;</span></span><br><span class="line">           我会占满剩余宽度的1/3</span><br><span class="line">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"flex2"</span>&gt;</span></span><br><span class="line">           我会占满剩余宽度的2/3</span><br><span class="line">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.initial</span>&#123;</span><br><span class="line">    <span class="attribute">-webkit-flex</span>:initial;</span><br><span class="line">    <span class="attribute">flex</span>:initial;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">min-width</span>:<span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.none</span>&#123;</span><br><span class="line">    <span class="attribute">-webkit-flex</span>:none;</span><br><span class="line">    <span class="attribute">flex</span>:none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex1</span>&#123;</span><br><span class="line">    <span class="attribute">-webkit-flex</span>:<span class="number">1</span>;</span><br><span class="line">    <span class="attribute">flex</span>:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex2</span>&#123;</span><br><span class="line">    <span class="attribute">-webkit-flex</span>:<span class="number">2</span>;</span><br><span class="line">    <span class="attribute">flex</span>:<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>简单的垂直居中布局</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"vertical-container"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">           css中一种垂直居中的方法</span><br><span class="line">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.vertical-container</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">display</span>:-webkit-flex;</span><br><span class="line">    <span class="attribute">display</span>:flex;</span><br><span class="line">    <span class="attribute">-webkit-align-items</span>:center;<span class="comment">/*垂直居中*/</span></span><br><span class="line">    <span class="attribute">align-items</span>:center;</span><br><span class="line">    <span class="attribute">-webkit-justify-content</span>:center;<span class="comment">/*内容居中*/</span></span><br><span class="line">    <span class="attribute">justify-content</span>:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/28/弹性盒子的布局方式简介/" data-id="cjmlmhqtr0008lcr2tth25u6w" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-前端英语翻译" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/09/25/前端英语翻译/" class="article-date">
@@ -85,11 +133,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Overriding（覆盖） the default （默认）viewport can be done by including a viewport meta tag in the <code>&lt;head&gt;</code> section of your page.</p>
+<p>Justify-content <strong>内容对齐</strong></p>
+<p>align-items 垂直方向（纵轴）上的对齐方式 用于弹性容器</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/前端英语翻译/" data-id="cjmhup01f0005v5r26xqk5yo8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/前端英语翻译/" data-id="cjmlmhqtj0003lcr2rdsqnwtp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/英语/">英语</a></li></ul>
@@ -151,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/21/css之定位和浮动/" data-id="cjmhup01b0003v5r2u6rhy7da" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/21/css之定位和浮动/" data-id="cjmlmhqtd0001lcr27y0paqqo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -197,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/12/2018-09-12今日所感/" data-id="cjmhup0130001v5r22h0pg4j6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/12/2018-09-12今日所感/" data-id="cjmlmhqtw000dlcr2hieueyhb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活篇/">生活篇</a></li></ul>
@@ -251,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/2018-09-04/" data-id="cjmhup00x0000v5r22k8d7lnl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/04/2018-09-04/" data-id="cjmlmhqt60000lcr29ma1ora9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -294,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/学习计划/" data-id="cjmhup01i0008v5r2bo2g78ha" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/04/学习计划/" data-id="cjmlmhqtn0005lcr2amghrgwi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -491,7 +541,7 @@ span{ color:blue;}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/01/html+css基础课程/" data-id="cjmhup01d0004v5r2d6lz4njq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/01/html+css基础课程/" data-id="cjmlmhqtl0004lcr2vi04ln58" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -534,7 +584,7 @@ span{ color:blue;}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/01/第一篇博客之旅/" data-id="cjmhup01l000av5r2xyeqihhc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/01/第一篇博客之旅/" data-id="cjmlmhqtt000alcr2otv1yyme" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活篇/">生活篇</a></li></ul>
@@ -591,6 +641,10 @@ span{ color:blue;}
       <ul>
         
           <li>
+            <a href="/2018/09/28/弹性盒子的布局方式简介/">弹性盒子的布局方式简介</a>
+          </li>
+        
+          <li>
             <a href="/2018/09/25/前端英语翻译/">前端英语翻译</a>
           </li>
         
@@ -604,10 +658,6 @@ span{ color:blue;}
         
           <li>
             <a href="/2018/09/04/2018-09-04/">学习日记</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/04/学习计划/">近期学习计划</a>
           </li>
         
       </ul>
