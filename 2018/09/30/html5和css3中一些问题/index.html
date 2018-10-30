@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>html5和css3中一些问题 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="html5 主要目的是为了在移动设备上支持多媒体，增加了例如标签，标签，及标记。  +标签语义化   可以是浏览器识别，用户识别，程序员识别，有助于SEO优化。  通过h5语义化标签+css方式来进行布局。   ####h5新增了许多标签，但是当标签遇到浏览器不支持问题时，该如何解决？例如标签在IE8中不支持。 ​    解决方法1:在该标签的css样式中设置该标签的display:block，然">
+<meta name="keywords" content="学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html5和css3中一些问题">
+<meta property="og:url" content="http://yoursite.com/2018/09/30/html5和css3中一些问题/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="html5 主要目的是为了在移动设备上支持多媒体，增加了例如标签，标签，及标记。  +标签语义化   可以是浏览器识别，用户识别，程序员识别，有助于SEO优化。  通过h5语义化标签+css方式来进行布局。   ####h5新增了许多标签，但是当标签遇到浏览器不支持问题时，该如何解决？例如标签在IE8中不支持。 ​    解决方法1:在该标签的css样式中设置该标签的display:block，然">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-02T13:56:09.752Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html5和css3中一些问题">
+<meta name="twitter:description" content="html5 主要目的是为了在移动设备上支持多媒体，增加了例如标签，标签，及标记。  +标签语义化   可以是浏览器识别，用户识别，程序员识别，有助于SEO优化。  通过h5语义化标签+css方式来进行布局。   ####h5新增了许多标签，但是当标签遇到浏览器不支持问题时，该如何解决？例如标签在IE8中不支持。 ​    解决方法1:在该标签的css样式中设置该标签的display:block，然">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-html5和css3中一些问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/30/html5和css3中一些问题/" class="article-date">
+  <time datetime="2018-09-30T08:23:43.000Z" itemprop="datePublished">2018-09-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      html5和css3中一些问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="html5"><a href="#html5" class="headerlink" title="html5"></a>html5</h2><ul>
+<li><p>主要<strong>目的</strong>是为了在移动设备上支持多媒体，增加了例如<video>标签，<audio>标签，及<canvas>标记。</canvas></audio></video></p>
+</li>
+<li><p><strong>+标签语义化</strong>   可以是浏览器识别，用户识别，程序员识别，有助于SEO优化。</p>
+</li>
+<li><p>通过h5语义化标签+css方式来进行<strong>布局</strong>。</p>
+</li>
+</ul>
+<p>####h5新增了许多标签，但是当标签遇到浏览器不支持问题时，该如何解决？例如<header>标签在IE8中不支持。</header></p>
+<p>​    解决方法1:在该标签的css样式中设置该标签的display:block，然后通过DOM的方式创建这个标签，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">document.createElement("header");</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​    解决方法2:引入外部的htmlshiv.js文件（插件，外部的js文件）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"html5shiv.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​    为了解决h5标签在IE8中兼容的问题，引入了外部的js文件，但是谷歌本身就支持这些标签，没有必要访问这个js文件（不需要请求），这时可以cc:ie8 然后按下tab键即可。如果是浏览器小于ie8就执行里面的代码，该命令只针对IE浏览器有用。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lte IE 8]&gt;</span></span><br><span class="line"><span class="comment">&lt;script src="html5shiv.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="视频格式-有的浏览器不支持？？？"><a href="#视频格式-有的浏览器不支持？？？" class="headerlink" title="视频格式 有的浏览器不支持？？？"></a>视频格式 有的浏览器不支持？？？</h4><p>可以这样做：</p>
+<ul>
+<li>如果A浏览器支持第一个，那就直接播放第一个</li>
+<li>如果B浏览器支持第二个，遇到第一个标签的时候不支持，遇到第二个可以支持的，才会播放</li>
+<li>如果C浏览器都不支持，那就让用户升级系统。。。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">autoplay</span> <span class="attr">controls</span> <span class="attr">loop</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"mov/1.mp4"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"mov/1.ogg"</span>&gt;</span></span><br><span class="line">    对不起，您需要升级您的浏览器</span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>autoplay这个属性谷歌浏览器支持不是很好，这时候可以加上muted autoplay，这时谷歌浏览器可以播放，但是没有声音，此问题仍有待解决。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/30/html5和css3中一些问题/" data-id="cjnvp8xcu0003l4tczhrveo8m" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/10/30/近日所感/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          近日所感
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/29/跟你说的话/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活篇/">生活篇</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/英语/">英语</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/生活篇/" style="font-size: 15px;">生活篇</a> <a href="/tags/英语/" style="font-size: 10px;">英语</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/10/30/近日所感/">近日所感</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/30/html5和css3中一些问题/">html5和css3中一些问题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/29/跟你说的话/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/28/弹性盒子的布局方式简介/">弹性盒子的布局方式简介</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/25/前端英语翻译/">前端英语翻译</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

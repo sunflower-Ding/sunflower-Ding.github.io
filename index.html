@@ -62,6 +62,147 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-近日所感" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/30/近日所感/" class="article-date">
+  <time datetime="2018-10-30T12:02:09.000Z" itemprop="datePublished">2018-10-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/30/近日所感/">近日所感</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>满满的不知所措，当事情发生的时候。</p>
+<p>我发现我自己最不会相处的就是老人和小孩。不知道该做什么，不知道该说什么，不知道如何相处，我上网查，也查不到，没有人来教我怎么做。</p>
+<p>小孩，一种不成熟正在长大的个体，需要我来引导教育，也需要我来呵护保护他们不受伤害。有时候生怕哪个行为会造成他们心里的暗淡，怕有些事没有开导好让他性格上行为上有缺点，但是也没有教导我该怎么做，怎么相处，怎么亲近，怎么树立榜样。</p>
+<p>老人，将近生命的尾声，需要呵护和关爱，我也不知道如何和他们相处，该说下什么，做些什么，能够起到我应该起的作用，在没有钱，没有时间的情况下，可以做些什么，无助感，我有。</p>
+<p>想了想，是因为距离，太远的距离。是因为我自己的怯懦。还是因为没有物质条件。古人说儿行千里母担忧，其实，我是儿行千里儿担忧远在家乡的老母亲。需要常回家看看。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/30/近日所感/" data-id="cjnvp8xdc000fl4tcnfyk1y84" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-html5和css3中一些问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/30/html5和css3中一些问题/" class="article-date">
+  <time datetime="2018-09-30T08:23:43.000Z" itemprop="datePublished">2018-09-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/30/html5和css3中一些问题/">html5和css3中一些问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="html5"><a href="#html5" class="headerlink" title="html5"></a>html5</h2><ul>
+<li><p>主要<strong>目的</strong>是为了在移动设备上支持多媒体，增加了例如<video>标签，<audio>标签，及<canvas>标记。</canvas></audio></video></p>
+</li>
+<li><p><strong>+标签语义化</strong>   可以是浏览器识别，用户识别，程序员识别，有助于SEO优化。</p>
+</li>
+<li><p>通过h5语义化标签+css方式来进行<strong>布局</strong>。</p>
+</li>
+</ul>
+<p>####h5新增了许多标签，但是当标签遇到浏览器不支持问题时，该如何解决？例如<header>标签在IE8中不支持。</header></p>
+<p>​    解决方法1:在该标签的css样式中设置该标签的display:block，然后通过DOM的方式创建这个标签，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">document.createElement("header");</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​    解决方法2:引入外部的htmlshiv.js文件（插件，外部的js文件）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"html5shiv.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>​    为了解决h5标签在IE8中兼容的问题，引入了外部的js文件，但是谷歌本身就支持这些标签，没有必要访问这个js文件（不需要请求），这时可以cc:ie8 然后按下tab键即可。如果是浏览器小于ie8就执行里面的代码，该命令只针对IE浏览器有用。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lte IE 8]&gt;</span></span><br><span class="line"><span class="comment">&lt;script src="html5shiv.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="视频格式-有的浏览器不支持？？？"><a href="#视频格式-有的浏览器不支持？？？" class="headerlink" title="视频格式 有的浏览器不支持？？？"></a>视频格式 有的浏览器不支持？？？</h4><p>可以这样做：</p>
+<ul>
+<li>如果A浏览器支持第一个，那就直接播放第一个</li>
+<li>如果B浏览器支持第二个，遇到第一个标签的时候不支持，遇到第二个可以支持的，才会播放</li>
+<li>如果C浏览器都不支持，那就让用户升级系统。。。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">autoplay</span> <span class="attr">controls</span> <span class="attr">loop</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"mov/1.mp4"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"mov/1.ogg"</span>&gt;</span></span><br><span class="line">    对不起，您需要升级您的浏览器</span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>autoplay这个属性谷歌浏览器支持不是很好，这时候可以加上muted autoplay，这时谷歌浏览器可以播放，但是没有声音，此问题仍有待解决。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/30/html5和css3中一些问题/" data-id="cjnvp8xcu0003l4tczhrveo8m" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-跟你说的话" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/29/跟你说的话/" class="article-date">
+  <time datetime="2018-09-29T05:43:20.152Z" itemprop="datePublished">2018-09-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>跟你说的话</strong></p>
+<p>终于宝宝睡了，我昨天晚上情绪爆发了，当时实在无力和你辩解，所以睡了。今天我和你好好说道说道。目的只有一个，希望你理解包容我。</p>
+<p>你昨天看到水池旁抹布没洗，灶台没擦，我承认我是没有那个习惯擦洗灶台，我接受并会改变。不过你有注意到我擦洗水池了吗？妈买的那个擦刷灵真灵。好吧，真实情况是我每天都是抽时间做饭，而且还要边听着孩子的哭声，撕心裂肺的，基本几分钟做好饭。我会趁他睡着或者不哭的时候，把菜切好，饭准备好，以应对真正做饭争分夺秒的做饭时间。今天运气不好，我哄了一上午，他也没睡，我也没来得及切菜准备，已经快一点了，我必须做饭了，我在他的哭声中下了面条丢了菜叶，等饭好，我去哄他睡着，他睡了我来盛饭，在凉饭的时候我给你写这些东西。</p>
+<p>那天老师来家访，你说我能打扫的干净，怎么不打扫，我想说你知道我那天下午二点多才吃上饭，孩子哭的快断气了，</p>
+<p>你嫌弃我哄他的时候，只说话不抱他，那你知道吗？他哭了，我待确定他是不是饿了，还是胀气了，还是尿不湿湿了，还是纯粹哭闹想睡觉了？那你知道吗，我已经试了各种方法，正在实施的一种就是轻声安慰，有时候起作用，有时候就不行，你知道的，不是总灵的时候，我只能靠猜，这两天他每天都一直哭，很难入睡，我猜测他可能没吃饱，但是这个结论我照顾了他三天我才推测出来，他毕竟是一个不会说话的孩子。</p>
+<p>手机的事情，你第一次（瞧，他又哭了，我去看看）告诉我我一天看了七个多小时的时候，我内心很震撼，同时觉得这真是个好设置，我要改变，第二天，我降低到四个小时，我还挺开心，（你不相信我，你说还有电脑和电视呢），我准备第三天也就是昨天降低到两个小时，但是昨天我购物了，微信了，看奇葩说了，时间超标了。微信是和宿舍人联系，你又说我，和这些人说话有意思吗？带娃不能认真带吗？我想说，一，我是真心想改变自己玩手机的坏习惯，二，我不会拒绝自己和别人联系的权利。后来我在想，如果我真的完全像你说的那样，我会是什么样？一天没有社交，没有娱乐，只看娃做饭洗衣服打扫卫生学习代码，我做不到。其实，现在也差不多。我每天看娃的时间占了四分之三，我很可悲。好吧，娃又哭了。我不知道该怎么哄他了，我用尽了办法。</p>
+<p>最后说下，让你晚上洗衣服刷碗的事情，我经历了一天到了晚上比较疲惫，所以想让你帮忙分担点，但又怕你也太累，所以没敢让你做太多，所以我主动承担了倒洗澡水的任务。其实让你洗一件衣服算什么，我也能洗，主要是我白天经历他吐奶，拉粑粑，我也洗了好多衣服。让你帮忙减轻我的负担，但我不想听你抱怨。晚上你生气了盖上被子就睡了，是我，担起哄娃的重任，让他睡着了。没办法，我是想和你吵，我也想任性让他哭吧，我也睡觉，但是我做不到，我也不想让他嗷嗷哭泣。夜里，我还有起来喂他，对你来说，只不过是睁只眼伸个手蚱蜢下就过去了，对我来说是最少半个小时。当然你也很辛苦，夜里费神看他。</p>
+<p>孩子哭的太厉害了，我简单说，希望你理解我，包容我。白纸一张，上有黑点。你只看到了黑点，忽略了那大片的白色。</p>
+<p>我在改变，也在成长，只是太慢，跟不上你的节奏。昨晚你生气的时候提起我一个人，意思是我们分手后我一个人这样的话，我当时太累，不想听你说下去。如果真的到那一步，我也很坦荡，无愧于心。不过，转瞬想，我可能再也找不到像你这么好的男人，所以我还是很珍惜你的。</p>
+<p>但我很讨厌你拿我一个人这样的话来威胁我以期待我能成长，是，我现在一事无成，我在原生家庭里经常被指责，现在结婚了跟你在一起六年，我还是一事无成，备受你指责，确实是因为我没有事业，没有进取，但是这些真的不妨碍我离开你。我是挺担心，我没有能力，所以会被离婚，毕竟婚姻是一艘船，两个人同舟，总是相互依靠，你在我身上找不到可以利用的依靠的东西，自然会离开我。我想告诉你，我是很担心离婚，很害怕离开你，但是如果真的走到这一步我也不怕。自从生了孩子以后，我觉着自己更强大了，无所畏惧。</p>
+<p>最后，真心期待你能包容我理解我，我们更加美好。谢谢你花时间来看我写这些东西。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/29/跟你说的话/" data-id="cjnvp8xde000il4tcvocgsw96" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-弹性盒子的布局方式简介" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/09/28/弹性盒子的布局方式简介/" class="article-date">
@@ -98,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/28/弹性盒子的布局方式简介/" data-id="cjmlmhqtr0008lcr2tth25u6w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/28/弹性盒子的布局方式简介/" data-id="cjnvp8xd5000al4tcex4hhwyc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -135,11 +276,15 @@
         <p>Overriding（覆盖） the default （默认）viewport can be done by including a viewport meta tag in the <code>&lt;head&gt;</code> section of your page.</p>
 <p>Justify-content <strong>内容对齐</strong></p>
 <p>align-items 垂直方向（纵轴）上的对齐方式 用于弹性容器</p>
+<p>Autocomplete 自动完成 在<form>标签中，autocomplete=”off”,意味着关闭智能提示，Novalidate 表单<form>标签中关闭验证功能</form></form></p>
+<p>Validate 验证</p>
+<p>Cursor 光标指针，CSS中此功能可以改变鼠标指针的形状，有crosshair十字形，help问号，pointer指针指示器，e-resize横向箭头等等</p>
+<p>构造函数（constructor）和原型链（prototype chains）</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/前端英语翻译/" data-id="cjmlmhqtj0003lcr2rdsqnwtp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/前端英语翻译/" data-id="cjnvp8xcx0004l4tco28e2s9g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/英语/">英语</a></li></ul>
@@ -201,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/21/css之定位和浮动/" data-id="cjmlmhqtd0001lcr27y0paqqo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/21/css之定位和浮动/" data-id="cjnvp8xcz0005l4tcar4mufv0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -247,7 +392,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/12/2018-09-12今日所感/" data-id="cjmlmhqtw000dlcr2hieueyhb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/12/2018-09-12今日所感/" data-id="cjnvp8xcn0001l4tcvrvqmhk3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活篇/">生活篇</a></li></ul>
@@ -301,7 +446,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/2018-09-04/" data-id="cjmlmhqt60000lcr29ma1ora9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/04/2018-09-04/" data-id="cjnvp8xcg0000l4tcvkybk5ab" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -344,204 +489,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/学习计划/" data-id="cjmlmhqtn0005lcr2amghrgwi" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-html+css基础课程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/01/html+css基础课程/" class="article-date">
-  <time datetime="2018-09-01T11:54:38.000Z" itemprop="datePublished">2018-09-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/01/html+css基础课程/">html+css基础课程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li><strong>HTML是网页内容的载体。</strong>内容就是网页制作者放在页面上想要让用户浏览的信息，可以包含文字、图片、视频等。</li>
-<li><strong>CSS样式是表现</strong>。就像网页的外衣。比如，标题字体、颜色变化，或为标题加入背景图片、边框等。所有这些用来改变内容外观的东西称之为表现。</li>
-<li><strong>JavaScript是用来实现网页上的特效效果</strong>。如：鼠标滑过弹出下拉菜单。或鼠标滑过表格的背景颜色改变。还有焦点新闻（新闻图片）的轮换。可以这么理解，有动画的，有交互的一般都是用JavaScript来实现的。</li>
-</ol>
-<p>###<strong>HTML文件基本结构</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;...&lt;/head&gt;</span><br><span class="line">&lt;body&gt;...&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p>代码讲解：</p>
-<ol>
-<li><p><code>&lt;html&gt;&lt;/html&gt;</code>称为根标签，所有的网页标签都在<html></html>中。</p>
-</li>
-<li><p><code>&lt;head&gt;</code>标签用于定义文档的头部，它是所有头部元素的容器。头部元素有<code>&lt;title&gt;</code>、<code>&lt;script&gt;</code>、 <code>&lt;style&gt;</code>、<code>&lt;link&gt;</code>、 <code>&lt;meta&gt;</code>等标签，文档的头部描述了文档的各种属性和信息，包括文档的标题等。</p>
-</li>
-</ol>
-<p>​    <code>&lt;title&gt;</code>标签：在<title>和</title>标签之间的文字内容是网页的标题信息，它会出现在浏览器的标题栏中。网页的title标签用于告诉用户和搜索引擎这个网页的主要内容是什么，搜索引擎可以通过网页标题，迅速的判断出网页的主题。</p>
-<ol start="3">
-<li>在<code>&lt;body&gt;</code>和<code>&lt;/body&gt;</code>标签之间的内容是网页的主要内容，如<code>&lt;h1&gt;</code>、<code>&lt;p&gt;</code>、<code>&lt;a&gt;</code>、<code>&lt;img&gt;</code>等网页内容标签，在这里的标签中的内容会在浏览器中显示出来。</li>
-</ol>
-<p>##<strong>html标签</strong></p>
-<p><strong>标签的用途</strong>：<strong>语义化</strong>即明白每个标签的用途（在什么情况下使用此标签合理）比如，网页上的文章的<strong>标题</strong>就可以用标题标签，网页上的各个栏目的<strong>栏目名称</strong>也可以使用标题标签。文章中内容的段落就得放在<strong>段落标签</strong>中，在文章中有想强调的文本，就可以使用 em 标签表示强调等等。</p>
-<ul>
-<li><strong>标签语义化的好处</strong></li>
-</ul>
-<ol>
-<li><p>更容易被搜索引擎收录。</p>
-</li>
-<li><p>更容易让屏幕阅读器读出网页内容。</p>
-</li>
-</ol>
-<ul>
-<li><strong>HTML的代码注释</strong> </li>
-</ul>
-<p>语法: <code>&lt;!--注释文字--&gt;</code></p>
-<ul>
-<li><strong>一段文字一个<code>&lt;p&gt;</code>标签</strong>  </li>
-</ul>
-<p>语法：<code>&lt;p&gt;段落文本&lt;/p&gt;</code></p>
-<ul>
-<li><strong>标题标签</strong> 一共有6个，<code>h1、h2、h3、h4、h5、h6</code>分别为一级标题、二级标题、三级标题、四级标题、五级标题、六级标题。并且依据重要性递减。<code>&lt;h1&gt;</code>是最高的等级。</li>
-</ul>
-<p>语法：<code>&lt;hx&gt;标题文本&lt;/hx&gt;</code> (x为1-6)</p>
-<ul>
-<li><strong>强调标签<srtong>和<em></em></srtong></strong>，在浏览器中<code>&lt;em&gt;</code>默认用斜体表示，<code>&lt;strong&gt;</code>用粗体表示。</li>
-</ul>
-<p>语法：<code>&lt;em&gt;需要强调的文本&lt;/em&gt;</code>，</p>
-<p>​        <code>&lt;strong&gt;需要强调的文本&lt;/strong&gt;</code></p>
-<ul>
-<li><strong>使用<span>标签为文字设置单独样式</span></strong></li>
-</ul>
-<p>语法：<code>&lt;span&gt;文本&lt;/span&gt;</code></p>
-<p>但需要在头部设置    </p>
-<p><code>&lt;style&gt;
-span{ color:blue;}
-&lt;/style&gt;</code></p>
-<ul>
-<li><strong><q>标签，短文本引用</q></strong>    注意要引用的文本不用加双引号，浏览器会对q标签自动添加双引号。</li>
-</ul>
-<p>语法：<code>&lt;q&gt;引用文本&lt;/q&gt;</code></p>
-<ul>
-<li><strong><blockquote>标签，长文本引用</blockquote></strong> </li>
-</ul>
-<p>语法：<code>&lt;blockquote&gt;引用文本&lt;/blockquote&gt;</code></p>
-<ul>
-<li><strong>使用<code>&lt;br&gt;</code>标签分行显示文本</strong> </li>
-</ul>
-<p>相当于word文档中的回车键</p>
-<p>语法：    xhtml1.0写法：<code>&lt;br /&gt;</code></p>
-<p>html4.01写法：<code>&lt;br&gt;</code></p>
-<p>大家注意，现在一般使用 xhtml1.0 的版本的写法（其它标签也是），这种版本比较规范。<code>&lt;br /&gt;</code>标签是一个空标签，没有HTML内容的标签就是空标签，空标签只需要写一个开始标签，这样的标签有<code>&lt;br /&gt;</code>、<code>&lt;hr /&gt;</code>和<code>&lt;img /&gt;</code>。<strong>在html中忽略回车和空格的。</strong>在html文本中想输入回车换行，就必须输入<code>&lt;br /&gt;</code>。要想输入空格，必须写入<code>&amp;nbsp;</code>，几个空格就输入几个<code>&amp;nbsp;</code></p>
-<ul>
-<li><strong>认识<code>&lt;hr&gt;</code>标签，添加水平横线</strong></li>
-</ul>
-<p>语法：html4.01版本<code>&lt;hr&gt;</code>         xhtml1.0版本 <code>&lt;hr /&gt;</code></p>
-<p>大家注意，现在一般使用 xhtml1.0 的版本（其它标签也是），这种版本比较规范。</p>
-<ul>
-<li><strong><code>&lt;adress&gt;</code>标签，为网页加入地址信息</strong></li>
-</ul>
-<p>也可以定义一个地址（比如电子邮件地址）、签名或者文档的作者身份。</p>
-<p>语法：<code>&lt;address&gt;联系地址信息&lt;/address&gt;</code></p>
-<ul>
-<li><strong>加入一行代码，使用<code>&lt;code&gt;</code>标签</strong></li>
-</ul>
-<p>语法：<code>&lt;code&gt;代码语言&lt;/code&gt;</code></p>
-<ul>
-<li>加入多行代码，可以使用<code>&lt;pre&gt;</code>标签。</li>
-</ul>
-<p>语法：<code>&lt;pre&gt;语言代码段&lt;/pre&gt;</code></p>
-<p><code>&lt;pre&gt;</code>标签的主要作用:预格式化的文本。被包围在 <pre>元素中的文本通常会保留空格和换行符。</pre></p>
-<ul>
-<li><strong>使用ul，添加无序列表</strong></li>
-</ul>
-<p>无序列表    语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">&lt;li&gt;信息&lt;/li&gt;</span><br><span class="line">&lt;li&gt;信息&lt;/li&gt;</span><br><span class="line">......</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>使用ol，添加有序列表</strong></li>
-</ul>
-<p><strong>语法：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">&lt;li&gt;信息&lt;/li&gt;</span><br><span class="line">&lt;li&gt;信息&lt;/li&gt;</span><br><span class="line">......</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>认识div在排版中的作用</strong></li>
-</ul>
-<p>在网页制作过程过中，可以把一些独立的逻辑部分划分出来，放在一个<code>&lt;div&gt;</code>标签中，这个<code>&lt;div&gt;</code>标签的作用就相当于一个容器。</p>
-<p>什么是逻辑部分？它是页面上相互关联的一组元素。如网页中的独立的<strong>栏目版块</strong>，就是一个典型的逻辑部分。用div标签为网页划分独立的版块。</p>
-<p>语法：<code>&lt;div&gt;…&lt;/div&gt;</code></p>
-<p>我们可以为这一个独立的逻辑部分设置一个名称，用id属性来为<div>提供唯一的名称，这个就像我们每个人都有一个身份证号，这个身份证号是唯一标识我们的身份的，也是必须唯一的。</div></p>
-<p>语法：<code>&lt;div  id=&quot;版块名称&quot;&gt;…&lt;/div&gt;</code></p>
-<ul>
-<li><strong>table 认识网页上的表格</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">&lt;tbody&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">&lt;th&gt;班级&lt;/th&gt;</span><br><span class="line">&lt;th&gt;学生数&lt;/th&gt;</span><br><span class="line">&lt;th&gt;平均成绩&lt;/th&gt;</span><br><span class="line">&lt;/tr&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">&lt;td&gt;一班&lt;/td&gt;</span><br><span class="line">&lt;td&gt;30&lt;/td&gt;</span><br><span class="line">&lt;td&gt;89&lt;/td&gt;</span><br><span class="line">&lt;/tr&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">&lt;td&gt;二班&lt;/td&gt;</span><br><span class="line">&lt;td&gt;35&lt;/td&gt;</span><br><span class="line">&lt;td&gt;85&lt;/td&gt;</span><br><span class="line">&lt;/tr&gt;</span><br><span class="line">&lt;/tbody&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
-<p>1、<table>…</table>：整个表格以<table>标记开始、</table>标记结束。</p>
-<p>2、<tbody>…</tbody>：如果不加<thead><tbody><tfooter> , table表格加载完后才显示。加上这些表格结构， tbody包含行的内容下载完优先显示，不必等待表格结束后在显示，同时如果表格很长，用tbody分段，可以一部分一部分地显示。（通俗理解table 可以按结构一块块的显示，不在等整个表格加载完后显示。）</tfooter></tbody></thead></p>
-<p>3、<tr>…</tr>：表格的一行，所以有几对tr 表格就有几行。</p>
-<p>4、<td>…</td>：表格的一个单元格，一行中包含几对<td>…</td>，说明一行中就有几列。</p>
-<p>5、<th>…</th>：表格的头部的一个单元格，表格表头。</p>
-<ul>
-<li><strong>用css样式，为表格加入边框</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</span><br><span class="line">&lt;title&gt;为表格添加边框&lt;/title&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">table tr td,th&#123;border:1px solid #000;&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>caption标签，为表格添加标题和摘要</strong></li>
-</ul>
-<p>摘要</p>
-<p>摘要的内容是不会在浏览器中显示出来的。它的作用是增加表格的可读性(语义化)，使搜索引擎更好的读懂表格内容，还可以使屏幕阅读器更好的帮助特殊用户读取表格内容。</p>
-<p><strong>语法：</strong><code>&lt;table summary=&quot;表格简介文本&quot;&gt;</code></p>
-<p>标题</p>
-<p>用以描述表格内容，标题的显示位置：表格上方。</p>
-<p>​     <strong>语法：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">&lt;caption&gt;标题文本&lt;/caption&gt;</span><br><span class="line">&lt;tr&gt;</span><br><span class="line">&lt;td&gt;…&lt;/td&gt;</span><br><span class="line">&lt;td&gt;…&lt;/td&gt;</span><br><span class="line">…</span><br><span class="line">&lt;/tr&gt;</span><br><span class="line">…</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>使用<code>&lt;a&gt;</code>标签可实现超链接</strong></li>
-</ul>
-<p><strong>语法：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a  href=&quot;目标网址&quot;  title=&quot;鼠标滑过显示的文本&quot;&gt;链接显示的文本&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<p>title属性的作用，鼠标滑过链接文字时会显示这个属性的文本内容。这个属性在实际网页开发中作用很大，主要方便搜索引擎了解链接地址的内容（语义化更友好）。</p>
-<ul>
-<li><strong>在新建浏览器窗口中打开链接</strong></li>
-</ul>
-<p><a>标签在默认情况下，链接的网页是在当前浏览器窗口中打开，有时我们需要在新的浏览器窗口中打开。</a></p>
-<p>如下代码：</p>
-<p><code>&lt;a href=&quot;目标网址&quot; target=&quot;_blank&quot;&gt;click here!&lt;/a&gt;</code></p>
-<ul>
-<li><strong>使用mailto在网页中链接Email地址</strong></li>
-</ul>
-<p><a href="http://img.mukewang.com/52da4f2a000150b714280550.jpg" target="_blank" rel="noopener">http://img.mukewang.com/52da4f2a000150b714280550.jpg</a></p>
-<p><strong>注意</strong>：如果mailto后面同时有多个参数的话，第一个参数必须以“<code>?</code>”开头，后面的参数每一个都以“<code>&amp;</code>”分隔。</p>
-<p><code>&lt;a href=&quot;mailto:yy@imooc.com?subject=观了不起的盖茨比有感&amp;body=你好，对此评论有些想法&quot;&gt;对此影评有何感想，发送邮件给我&lt;/a&gt;</code></p>
-<ul>
-<li><strong>认识<img>标签，为网页插入图片</strong></li>
-</ul>
-<p>语法：</p>
-<p><code>&lt;img src=&quot;图片地址&quot; alt=&quot;下载失败时的替换文本&quot; title = &quot;提示文本&quot;&gt;</code></p>
-<p>src：标识图像的位置；</p>
-<p>alt：指定图像的描述性文本，当图像不可见时（下载不成功时），可看到该属性指定的文本；</p>
-<p>title：提供在图像可见时对图像的描述(鼠标滑过图片时显示的文本)；</p>
-<p>图像可以是GIF，PNG，JPEG格式的图像文件。</p>
-<ul>
-<li></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/01/html+css基础课程/" data-id="cjmlmhqtl0004lcr2vi04ln58" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/04/学习计划/" data-id="cjnvp8xdj000kl4tcpssz3ygg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -584,7 +532,7 @@ span{ color:blue;}
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/01/第一篇博客之旅/" data-id="cjmlmhqtt000alcr2otv1yyme" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/01/第一篇博客之旅/" data-id="cjnvp8xda000dl4tcbdevyl6n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活篇/">生活篇</a></li></ul>
@@ -598,6 +546,11 @@ span{ color:blue;}
   
 
 
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
+
 </section>
         
           <aside id="sidebar">
@@ -609,7 +562,7 @@ span{ color:blue;}
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活篇/">生活篇</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/英语/">英语</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活篇/">生活篇</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/英语/">英语</a></li></ul>
     </div>
   </div>
 
@@ -619,7 +572,7 @@ span{ color:blue;}
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/生活篇/" style="font-size: 15px;">生活篇</a> <a href="/tags/英语/" style="font-size: 10px;">英语</a>
+      <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/生活篇/" style="font-size: 15px;">生活篇</a> <a href="/tags/英语/" style="font-size: 10px;">英语</a>
     </div>
   </div>
 
@@ -628,7 +581,7 @@ span{ color:blue;}
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
     </div>
   </div>
 
@@ -641,23 +594,23 @@ span{ color:blue;}
       <ul>
         
           <li>
+            <a href="/2018/10/30/近日所感/">近日所感</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/30/html5和css3中一些问题/">html5和css3中一些问题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/29/跟你说的话/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2018/09/28/弹性盒子的布局方式简介/">弹性盒子的布局方式简介</a>
           </li>
         
           <li>
             <a href="/2018/09/25/前端英语翻译/">前端英语翻译</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/21/css之定位和浮动/">css之定位和浮动</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/12/2018-09-12今日所感/">当你打开一扇窗</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/04/2018-09-04/">学习日记</a>
           </li>
         
       </ul>
