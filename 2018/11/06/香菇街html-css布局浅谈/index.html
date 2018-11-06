@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>香菇街html+css布局浅谈 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="香菇街的案例参照 表严肃 的视频 ，其项目代码见 github.com/biaoyansu/11.x 先说说香菇街的布局主区导航栏——.top-nav 搜索栏——.header 主促销区——.main-promote 次展示栏——.cat-promote 页脚栏——.footer 通篇以div+class的布局方式。然后提前设定好百分比的分块。再实际布局中再加以利用，width百分比的好处是可以在">
+<meta name="keywords" content="学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="香菇街html+css布局浅谈">
+<meta property="og:url" content="http://yoursite.com/2018/11/06/香菇街html-css布局浅谈/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="香菇街的案例参照 表严肃 的视频 ，其项目代码见 github.com/biaoyansu/11.x 先说说香菇街的布局主区导航栏——.top-nav 搜索栏——.header 主促销区——.main-promote 次展示栏——.cat-promote 页脚栏——.footer 通篇以div+class的布局方式。然后提前设定好百分比的分块。再实际布局中再加以利用，width百分比的好处是可以在">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-06T11:52:18.174Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="香菇街html+css布局浅谈">
+<meta name="twitter:description" content="香菇街的案例参照 表严肃 的视频 ，其项目代码见 github.com/biaoyansu/11.x 先说说香菇街的布局主区导航栏——.top-nav 搜索栏——.header 主促销区——.main-promote 次展示栏——.cat-promote 页脚栏——.footer 通篇以div+class的布局方式。然后提前设定好百分比的分块。再实际布局中再加以利用，width百分比的好处是可以在">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-香菇街html-css布局浅谈" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/06/香菇街html-css布局浅谈/" class="article-date">
+  <time datetime="2018-11-06T11:07:44.000Z" itemprop="datePublished">2018-11-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      香菇街html+css布局浅谈
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>香菇街的案例参照 <strong>表严肃</strong> 的视频 ，其项目代码见 github.com/biaoyansu/11.x</p>
+<h2 id="先说说香菇街的布局"><a href="#先说说香菇街的布局" class="headerlink" title="先说说香菇街的布局"></a>先说说香菇街的布局</h2><h3 id="主区"><a href="#主区" class="headerlink" title="主区"></a>主区</h3><p>导航栏——.top-nav</p>
+<p>搜索栏——.header</p>
+<p>主促销区——.main-promote</p>
+<p>次展示栏——.cat-promote</p>
+<p>页脚栏——.footer</p>
+<p>通篇以div+class的布局方式。然后提前设定好百分比的分块。再实际布局中再加以利用，width百分比的好处是可以在浏览器大小改变时能够相应收缩放大，但是对于图片较多的电商网站则会造成图片压缩，所以像淘宝等电商网站通常固定width，不改变其大小。香菇街的案例仍采用百分比的模式。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.col-1</span>,<span class="selector-class">.col-2</span>,<span class="selector-class">.col-3</span>,<span class="selector-class">.col-4</span>,<span class="selector-class">.col-5</span>,<span class="selector-class">.col-6</span>,<span class="selector-class">.col-7</span>,<span class="selector-class">.col-8</span>,<span class="selector-class">.col-9</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">    <span class="attribute">min-height</span>:<span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.col-1</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">10%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.col-2</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">20%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="总的CSS布局"><a href="#总的CSS布局" class="headerlink" title="总的CSS布局"></a>总的CSS布局</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">-webkit-box-sizing</span>:border-box; <span class="comment">/*border-box是只以border内的为盒子*/</span></span><br><span class="line">    <span class="attribute">box-sizing</span>:border-box;</span><br><span class="line">    <span class="attribute">-webkit-transition</span>: background <span class="number">200ms</span>;<span class="comment">/*为了颜色转变更柔和些*/</span></span><br><span class="line">    <span class="attribute">-o-transition</span>: background <span class="number">200ms</span>;</span><br><span class="line">    <span class="attribute">transition</span>:background <span class="number">200ms</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里强调一下box-sizing：border-box，全局都应用边框盒子模型，可以减少因为margin引起的问题，同时不影响子div灵活设置margin。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#444</span>;</span><br><span class="line">    <span class="attribute">background</span>:<span class="number">#f9f9f9</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span>&#123;<span class="attribute">text-decoration</span>:none;&#125;</span><br><span class="line"><span class="selector-tag">img</span>&#123;<span class="attribute">display</span>:block;<span class="attribute">max-width</span>:<span class="number">100%</span>;&#125;</span><br></pre></td></tr></table></figure>
+<p>这里给body设置全局的文字大小，颜色和背景。删除了a链接的下划线，设置图片的max-width:100%是防止图片过大，其最大宽度为父元素宽度的100%。<strong>强调</strong>为方便看布局，可设置其背景颜色。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">    <span class="attribute">max-width</span>:<span class="number">1080px</span>;    <span class="comment">/*如果浏览器窗口大于1080px,那么宽度就是1080px，如果浏览器小于1080px，那么宽度就是浏览器宽度。*/</span></span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span> auto;      <span class="comment">/*上下为0，左右auto，可使它居中*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fl</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fr</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里每个大的分区都在.container的div下，这样可以保证全站上下格式一致，而.container设置了最大宽度，块状元素，居中。这个很重要！</p>
+<p>左浮动和右浮动在布局中也很重要。但要注意浮动会引起父元素高度的坍塌，这里我采用以下方法。在父元素设置下列类。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clear-float</span>&#123;</span><br><span class="line">    <span class="attribute">overflow</span>:auto;</span><br><span class="line">    <span class="attribute">zoom</span>:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="细节问题"><a href="#细节问题" class="headerlink" title="细节问题"></a>细节问题</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span><span class="selector-pseudo">:inline-block</span>; <span class="comment">/*行内元素的padding元素，只有padding-left和padding-right有效果，上下不识别；</span></span><br><span class="line"><span class="comment">margin属性和padding属性一样，对于行内元素只有左右生效，其他的没有作用的。而a标签本来是行内元素，所以要把它设置为</span></span><br><span class="line"><span class="comment">行内块级元素。*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span> <span class="selector-class">.search-bar</span> <span class="selector-tag">button</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">20%</span>;</span><br><span class="line">    <span class="attribute">float</span>:right;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#ff4466</span>;</span><br><span class="line">    <span class="attribute">color</span>:<span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">37px</span>;</span><br><span class="line">    <span class="attribute">outline</span>:<span class="number">0</span>; <span class="comment">/*清除点击输入框时输入框的颜色*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">line-height</span><span class="selector-pseudo">:50px</span>; <span class="comment">/*让行高等于这个div的高度，可以使文字垂直居中*/</span></span><br><span class="line"><span class="selector-tag">border-radius</span><span class="selector-pseudo">:50</span>%;<span class="comment">/*为元素添加圆角边框*/</span></span><br><span class="line"><span class="selector-tag">-webkit-box-shadow</span><span class="selector-pseudo">:inset</span> 0 0 1<span class="selector-tag">px</span>  2<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0,0,0,<span class="selector-class">.1</span>);</span><br><span class="line">  <span class="selector-tag">box-shadow</span><span class="selector-pseudo">:inset</span> 0 0 1<span class="selector-tag">px</span> 2<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0,0,0,<span class="selector-class">.1</span>);<span class="comment">/*边框阴影，使边框更有质感*/</span></span><br><span class="line"><span class="selector-tag">vertical-align</span><span class="selector-pseudo">:middle</span>;<span class="comment">/*设置元素的垂直对齐方式，middle使得将此元素放在父元素的中部；*/</span></span><br><span class="line"><span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;<span class="comment">/*文字居中*/</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/06/香菇街html-css布局浅谈/" data-id="cjo5od9e4000mxdtcu7mjbpld" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/31/2018-10-31/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2018-10-31</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/英语/">英语</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/生活/" style="font-size: 15px;">生活</a> <a href="/tags/英语/" style="font-size: 10px;">英语</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/06/香菇街html-css布局浅谈/">香菇街html+css布局浅谈</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/31/2018-10-31/">2018-10-31</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/30/近日所感/">近日所感</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/30/html5和css3中一些问题/">html5和css3中一些问题</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/29/跟你说的话/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -62,6 +62,63 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-香菇街html-css布局浅谈" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/06/香菇街html-css布局浅谈/" class="article-date">
+  <time datetime="2018-11-06T11:07:44.000Z" itemprop="datePublished">2018-11-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/06/香菇街html-css布局浅谈/">香菇街html+css布局浅谈</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>香菇街的案例参照 <strong>表严肃</strong> 的视频 ，其项目代码见 github.com/biaoyansu/11.x</p>
+<h2 id="先说说香菇街的布局"><a href="#先说说香菇街的布局" class="headerlink" title="先说说香菇街的布局"></a>先说说香菇街的布局</h2><h3 id="主区"><a href="#主区" class="headerlink" title="主区"></a>主区</h3><p>导航栏——.top-nav</p>
+<p>搜索栏——.header</p>
+<p>主促销区——.main-promote</p>
+<p>次展示栏——.cat-promote</p>
+<p>页脚栏——.footer</p>
+<p>通篇以div+class的布局方式。然后提前设定好百分比的分块。再实际布局中再加以利用，width百分比的好处是可以在浏览器大小改变时能够相应收缩放大，但是对于图片较多的电商网站则会造成图片压缩，所以像淘宝等电商网站通常固定width，不改变其大小。香菇街的案例仍采用百分比的模式。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.col-1</span>,<span class="selector-class">.col-2</span>,<span class="selector-class">.col-3</span>,<span class="selector-class">.col-4</span>,<span class="selector-class">.col-5</span>,<span class="selector-class">.col-6</span>,<span class="selector-class">.col-7</span>,<span class="selector-class">.col-8</span>,<span class="selector-class">.col-9</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">    <span class="attribute">min-height</span>:<span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.col-1</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">10%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.col-2</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">20%</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="总的CSS布局"><a href="#总的CSS布局" class="headerlink" title="总的CSS布局"></a>总的CSS布局</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*&#123;</span><br><span class="line">    <span class="attribute">-webkit-box-sizing</span>:border-box; <span class="comment">/*border-box是只以border内的为盒子*/</span></span><br><span class="line">    <span class="attribute">box-sizing</span>:border-box;</span><br><span class="line">    <span class="attribute">-webkit-transition</span>: background <span class="number">200ms</span>;<span class="comment">/*为了颜色转变更柔和些*/</span></span><br><span class="line">    <span class="attribute">-o-transition</span>: background <span class="number">200ms</span>;</span><br><span class="line">    <span class="attribute">transition</span>:background <span class="number">200ms</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里强调一下box-sizing：border-box，全局都应用边框盒子模型，可以减少因为margin引起的问题，同时不影响子div灵活设置margin。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#444</span>;</span><br><span class="line">    <span class="attribute">background</span>:<span class="number">#f9f9f9</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span>&#123;<span class="attribute">text-decoration</span>:none;&#125;</span><br><span class="line"><span class="selector-tag">img</span>&#123;<span class="attribute">display</span>:block;<span class="attribute">max-width</span>:<span class="number">100%</span>;&#125;</span><br></pre></td></tr></table></figure>
+<p>这里给body设置全局的文字大小，颜色和背景。删除了a链接的下划线，设置图片的max-width:100%是防止图片过大，其最大宽度为父元素宽度的100%。<strong>强调</strong>为方便看布局，可设置其背景颜色。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">    <span class="attribute">max-width</span>:<span class="number">1080px</span>;    <span class="comment">/*如果浏览器窗口大于1080px,那么宽度就是1080px，如果浏览器小于1080px，那么宽度就是浏览器宽度。*/</span></span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span> auto;      <span class="comment">/*上下为0，左右auto，可使它居中*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fl</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.fr</span>&#123;</span><br><span class="line">    <span class="attribute">float</span>:right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里每个大的分区都在.container的div下，这样可以保证全站上下格式一致，而.container设置了最大宽度，块状元素，居中。这个很重要！</p>
+<p>左浮动和右浮动在布局中也很重要。但要注意浮动会引起父元素高度的坍塌，这里我采用以下方法。在父元素设置下列类。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clear-float</span>&#123;</span><br><span class="line">    <span class="attribute">overflow</span>:auto;</span><br><span class="line">    <span class="attribute">zoom</span>:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="细节问题"><a href="#细节问题" class="headerlink" title="细节问题"></a>细节问题</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span><span class="selector-pseudo">:inline-block</span>; <span class="comment">/*行内元素的padding元素，只有padding-left和padding-right有效果，上下不识别；</span></span><br><span class="line"><span class="comment">margin属性和padding属性一样，对于行内元素只有左右生效，其他的没有作用的。而a标签本来是行内元素，所以要把它设置为</span></span><br><span class="line"><span class="comment">行内块级元素。*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.header</span> <span class="selector-class">.search-bar</span> <span class="selector-tag">button</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">20%</span>;</span><br><span class="line">    <span class="attribute">float</span>:right;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#ff4466</span>;</span><br><span class="line">    <span class="attribute">color</span>:<span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">37px</span>;</span><br><span class="line">    <span class="attribute">outline</span>:<span class="number">0</span>; <span class="comment">/*清除点击输入框时输入框的颜色*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">line-height</span><span class="selector-pseudo">:50px</span>; <span class="comment">/*让行高等于这个div的高度，可以使文字垂直居中*/</span></span><br><span class="line"><span class="selector-tag">border-radius</span><span class="selector-pseudo">:50</span>%;<span class="comment">/*为元素添加圆角边框*/</span></span><br><span class="line"><span class="selector-tag">-webkit-box-shadow</span><span class="selector-pseudo">:inset</span> 0 0 1<span class="selector-tag">px</span>  2<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0,0,0,<span class="selector-class">.1</span>);</span><br><span class="line">  <span class="selector-tag">box-shadow</span><span class="selector-pseudo">:inset</span> 0 0 1<span class="selector-tag">px</span> 2<span class="selector-tag">px</span> <span class="selector-tag">rgba</span>(0,0,0,<span class="selector-class">.1</span>);<span class="comment">/*边框阴影，使边框更有质感*/</span></span><br><span class="line"><span class="selector-tag">vertical-align</span><span class="selector-pseudo">:middle</span>;<span class="comment">/*设置元素的垂直对齐方式，middle使得将此元素放在父元素的中部；*/</span></span><br><span class="line"><span class="selector-tag">text-align</span><span class="selector-pseudo">:center</span>;<span class="comment">/*文字居中*/</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/06/香菇街html-css布局浅谈/" data-id="cjo5od9e4000mxdtcu7mjbpld" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2018-10-31" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/31/2018-10-31/" class="article-date">
@@ -96,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/2018-10-31/" data-id="cjnx4bvzp000161tclafd7efy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/31/2018-10-31/" data-id="cjo5od9di0003xdtc66wi69xw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
@@ -139,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/30/近日所感/" data-id="cjnx4bw0k000k61tcm8o81xdl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/30/近日所感/" data-id="cjo5od9e2000kxdtcpirf1kpt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
@@ -200,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/30/html5和css3中一些问题/" data-id="cjnx4bvzx000461tcp4nr2fj9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/30/html5和css3中一些问题/" data-id="cjo5od9dn0008xdtcy1boj73v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -239,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/29/跟你说的话/" data-id="cjnx4bw0e000i61tcwbkjqpfs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/29/跟你说的话/" data-id="cjo5od9e6000oxdtce294d28q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/28/弹性盒子的布局方式简介/" data-id="cjnx4bw09000d61tcpcfbj697" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/28/弹性盒子的布局方式简介/" data-id="cjo5od9dw000fxdtcuivjvtmx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -330,7 +387,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/前端英语翻译/" data-id="cjnx4bw05000a61tcfqs902mm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/前端英语翻译/" data-id="cjo5od9dq000axdtc89hyxdio" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/英语/">英语</a></li></ul>
@@ -392,7 +449,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/21/css之定位和浮动/" data-id="cjnx4bw0o000m61tce09snpxx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/21/css之定位和浮动/" data-id="cjo5od9dk0004xdtct9emf3fj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -438,7 +495,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/12/2018-09-12今日所感/" data-id="cjnx4bvzu000361tcict6c74b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/12/2018-09-12今日所感/" data-id="cjo5od9dc0001xdtcq0vl40jl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
@@ -481,61 +538,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/学习计划/" data-id="cjnx4bw02000861tcm34va0nk" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2018-09-04" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/09/04/2018-09-04/" class="article-date">
-  <time datetime="2018-09-04T03:35:24.000Z" itemprop="datePublished">2018-09-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/04/2018-09-04/">学习日记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>电子文件的类型与格式 课件讲解</strong></p>
-<p><a href="https://wenku.baidu.com/view/e885ad3ef111f18583d05a43.html" target="_blank" rel="noopener">https://wenku.baidu.com/view/e885ad3ef111f18583d05a43.html</a></p>
-<p><strong>谈一下近来学习英语音标的感受</strong></p>
-<p>才知道英文字母、单词的发音不是无中生有，也不是凭空捏造，而是根据嘴巴一口气发“哇哦”这个过程中切断出各种发音，就是音标。很神奇，有木有。难就难在，有两三个元音是中国人发不准确的声音，就像湖北人天生不辨n和l，我苦恼的也就是这些，需要不断的练习。而单词就是元音辅音组合到一起，念快发出的音。比如b和e组合be，就是快速念b和e，越来越快，最后合成一个音be。</p>
-<p>我相信把音标学会后，再去听英文，不论多快，都能听懂，因为仅仅通过那个字母的味道确切说发音，就知道是哪个单词。</p>
-<p>我最近兴趣浓厚，也是因为我觉得好玩。抛开所有习得经验，仅仅练习嘴巴，就像练习口技一样，发出的声音就很美式，而不是chinese 英语。当然，很难，有人说像挑战生理极限，我觉得是，真的很难，但是想想那些艰苦练习发音的唱戏的，吹唢呐的，他们都可以成功，我觉得我也可以，需要坚持练习，知道熟练。</p>
-<p><strong>前端开发学习路线脑图</strong></p>
-<p><a href="https://www.cnblogs.com/luoguixin/p/6082527.html" target="_blank" rel="noopener">https://www.cnblogs.com/luoguixin/p/6082527.html</a></p>
-<p><a href="https://mubu.com/doc/explore/14458" target="_blank" rel="noopener">https://mubu.com/doc/explore/14458</a></p>
-<p><strong>网站前端的工作内容</strong>就是将美工设计的效果图设计成浏览器可以运行的网页，并与后端开发工程师配合做网页的数据显示和交互。</p>
-<p><strong>网站后端也就是后台</strong>，负责网站后台逻辑的设计和实现，还有用户及网站的保存和读取。</p>
-<p> 建站技术中，HTML、HTML5、XHTML、CSS、SQL、JavaScript、PHP、ASP.NET、Web Services 是什么？参见知乎<a href="https://www.zhihu.com/question/22689579/answer/22318058Web" target="_blank" rel="noopener">https://www.zhihu.com/question/22689579/answer/22318058Web</a></p>
-<p><img src="E:\A软件\myblog\hexo\public\img\网站传输图.jpg" alt="访问网站过程图"></p>
-<p>表示内容和语义的HTML,规定样式的CSS,得到的是一个静态的页面，没什么动画。而Javascript给页面添加了一些动态的效果。在HTML文件中用<script>关联JS的相关代码。HTML 5和XHTML是浏览器通识的一个通行的标准。</p>
-<p>浏览器给服务器发一个请求，服务器不是一看就知道怎么响应的，首先这些请求和响应要有 一个通用的写法，也就是一个协议，常用的是HTTP协议。</p>
-<p>PS:小感悟，人的精力都是有限的，我也只能选择其中一样来助攻，会有时间不够用的感觉。希望持之以恒吧。再一个要快速掌握最少的必备技能。再一个，长时间坐着真吃不消，，，</p>
-</script></p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/04/2018-09-04/" data-id="cjnx4bvzk000061tcsxqpvbof" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/04/学习计划/" data-id="cjo5od9du000dxdtc66wg5i9s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
@@ -584,7 +587,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
     </div>
   </div>
 
@@ -595,6 +598,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/11/06/香菇街html-css布局浅谈/">香菇街html+css布局浅谈</a>
+          </li>
         
           <li>
             <a href="/2018/10/31/2018-10-31/">2018-10-31</a>
@@ -610,10 +617,6 @@
         
           <li>
             <a href="/2018/09/29/跟你说的话/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/28/弹性盒子的布局方式简介/">弹性盒子的布局方式简介</a>
           </li>
         
       </ul>
